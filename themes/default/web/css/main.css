@@ -271,6 +271,10 @@ body.open-popup {
   text-transform: uppercase;
   color: #ffffff;
 }
+.banner img {
+  display: block;
+  max-width: 100%;
+}
 .banner-vertical {
   margin-top: 0;
   height: 466px;
@@ -1020,9 +1024,13 @@ input[type="checkbox"]:checked + .checkbox-label::before {
   -moz-box-shadow: 0 14px 27px 0 rgba(158, 196, 38, 0.27);
   box-shadow: 0 14px 27px 0 rgba(158, 196, 38, 0.27);
 }
+.header-submenu .header-menu-item {
+  padding-left: 0;
+}
 .header-submenu-item {
   display: block;
   line-height: normal;
+  padding-left: 0;
 }
 .header-submenu-item + .header-submenu-item {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
@@ -1035,7 +1043,7 @@ input[type="checkbox"]:checked + .checkbox-label::before {
   position: absolute;
   top: 50%;
   right: 8px;
-  margin-top: -1px;
+  margin-top: -3px;
   border-style: solid;
   border-color: #ffffff transparent transparent transparent;
   border-width: 6px 5px 0 5px;
@@ -1056,8 +1064,8 @@ input[type="checkbox"]:checked + .checkbox-label::before {
 }
 .header-submenu-link {
   display: block;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 8px 20px;
+  font-size: 12px;
   white-space: nowrap;
   color: #ffffff;
 }
@@ -1239,16 +1247,15 @@ input[type="checkbox"]:checked + .checkbox-label::before {
   background-color: #2ba1f4;
 }
 .product-shop {
-  overflow: hidden;
+  padding-left: 10px;
 }
 .product-shop-logo {
-  float: left;
-  margin-right: 10px;
-  max-width: 45px;
+  display: block;
+  margin-bottom: 8px;
+  max-width: 25px;
 }
 .product-shop-name {
   display: block;
-  margin-left: 55px;
   margin-bottom: 8px;
   font-size: 14px;
   text-decoration: underline;
@@ -1259,7 +1266,6 @@ input[type="checkbox"]:checked + .checkbox-label::before {
   text-decoration: none;
 }
 .product-shop-duration {
-  margin-left: 55px;
   font-size: 12px;
 }
 .product-price-new {
@@ -1569,6 +1575,26 @@ a.product-card-btn {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+.review-card-content {
+  position: relative;
+  height: -webkit-calc(100% - 160px - 40px);
+  height: calc(100% - 160px - 40px);
+}
+.review-card-content::after {
+  content: 'Подробнее';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 10px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #ffffff;
+  background-color: #e8a11a;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
 .review-card-title {
   margin-bottom: 20px;
   font-size: 18px;
@@ -1589,21 +1615,6 @@ a.product-card-btn {
   -webkit-box-orient: vertical;
   color: #ffffff;
 }
-.review-card-text::after {
-  content: 'Подробнее';
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  padding-left: 10px;
-  font-weight: 700;
-  text-decoration: underline;
-  color: #ffffff;
-  background-color: #e8a11a;
-  -webkit-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
 .review-card:hover,
 .review-card:active,
 .review-card:focus {
@@ -1614,6 +1625,12 @@ a.product-card-btn {
 .review-card:focus .review-card-img-wrapper {
   background-image: url("../images/ico-avatar-hover.png");
 }
+.review-card:hover .review-card-content::after,
+.review-card:active .review-card-content::after,
+.review-card:focus .review-card-content::after {
+  color: #e8a11a;
+  background-color: #ffffff;
+}
 .review-card:hover .review-card-title,
 .review-card:active .review-card-title,
 .review-card:focus .review-card-title {
@@ -1623,12 +1640,6 @@ a.product-card-btn {
 .review-card:active .review-card-text,
 .review-card:focus .review-card-text {
   color: #000000;
-}
-.review-card:hover .review-card-text::after,
-.review-card:active .review-card-text::after,
-.review-card:focus .review-card-text::after {
-  color: #e8a11a;
-  background-color: #ffffff;
 }
 /*Slider*/
 .slick-slide {
@@ -3172,9 +3183,6 @@ footer {
     right: 10px;
   }
   .header-menu-link {
-    font-size: 16px;
-  }
-  .header-submenu-link {
     font-size: 16px;
   }
   /*=FOOTER=*/
