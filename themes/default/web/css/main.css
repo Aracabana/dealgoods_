@@ -1252,7 +1252,7 @@ input[type="checkbox"]:checked + .checkbox-label::before {
 .product-shop-logo {
   display: block;
   margin-bottom: 8px;
-  max-width: 25px;
+  max-height: 25px;
 }
 .product-shop-name {
   display: block;
